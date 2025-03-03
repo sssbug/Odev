@@ -1,0 +1,20 @@
+a. select FirstName, LastName, Salary from Employees
+	Burada Employees tablosundaki  FirstName, LastName, Salary kolonlarını olduğu gibi getirdim.
+
+b. select distinct * from Departments
+      Burada departments tablosunun içindeki bütün verilerin içinden 
+	distinct sayesinde benzersiz olanları getirdim ama hepsi benzersiz olduğu için olduğu gibi geldi.
+
+
+c. select * from Employees where departmentid = 1;
+      Burada Employees tablosundaki sadece it alanında çalışan kişileri getirdim ama oluşturulan veri tabanında 
+         departmentid olakay kayıtlı oldu için İT eğil 1 olarak çağırdım.
+
+
+d. select * from Employees order by salary desc
+      Burada Employees tablosunun içindeki bütün verilerin içinden 
+	 salary verisini desc sayesinde küçükten büyüğe sıralayarak getirdim.
+
+
+e. select FirstName || ' ' || LastName from Employees
+       Burada Employees tablosunun içindeki FirstName ve LastName kolonlarını birleştirebilmek için  || ' ' || bu 	 işareti kullandım sonuçta tek bir kolon olarak geri döndü.
