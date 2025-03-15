@@ -1,0 +1,23 @@
+1. select COUNT(*) from Invoice where invoice_id IS NULL 
+    AND customer_id IS NULL 
+    AND invoice_date IS NULL 
+    AND billing_address IS NULL 
+    AND billing_city IS NULL 
+    AND billing_state IS NULL 
+    AND billing_country IS NULL 
+    AND billingpostal_code IS NULL 
+    AND total IS NULL;
+
+Burada her bir değeri tek tek IS NULL ile boş olup olmadığını kontrol ediyoruz COUNT(*) ile de boş değerlerin sayısını yakalıyoruz.
+
+
+2.select invoice_id, total as eskiToplam, total * 2 as yeniToplam from Invoice
+order by invoice_id desc;
+
+Burada eski toplamını alıp toplamın iki katına da yeni toplam ismini verip tablo oluşturdum desc'le de büyükten küçüğe sıraladım.
+
+
+3.select invoice_id, customer_id, CONCAT(LEFT(billing_address, 3), RIGHT(billing_address, 4)) as "Açık Adres"
+from Invoice where invoice_date BETWEEN '2013-08-01' AND '2013-08-31';
+
+Burada mailde de söylediğiniz gibi CONCAT kullanıp içinde soldan 3 sağdan 4 karakterini alıp BETWEEN ile 2013 yılının 8 ayının 1. gününden 31. gününün aralığında olan verileri getirdim
