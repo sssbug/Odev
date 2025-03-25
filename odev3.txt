@@ -1,0 +1,20 @@
+1. select SUM(total) AS toplamFatura from invoices where billing_country = 'USA' AND invoice_date 
+BETWEEN '2009-01-01' AND '2009-12-31';
+
+	Burada toplamFatura tablosuna 2009 un başından 2009 sonu arasındaki USA ya kesilmiş faturaları Sum(total) ile derledim
+
+
+2.select track.track_id, track.name, playlist.playlist_id, playlist.name from track
+JOIN trackKolonu on track.track_id = playlist_track.track_id
+JOIN playlistKolonu on playlist_track.playlist_id = playlist.playlist_id;
+
+	Burada join ile şemada gözüken track tablosundan çektiğim track id ile playlistteki track ile eşitse trackKolonunda birleştirdim ve playlist idlerini de aynı şekilde eğer eşitse playlistKolonunda birleştirdim. 
+
+
+3.select track.track_id, track.name, album.title, artist.name, track.milliseconds from track, album, artist 
+where track.album_id = album.album_id 
+AND album.artist_id = artist.artist_id 
+AND album.title = 'Let There Be Rock' 
+order by track.milliseconds desc;
+
+	Burada where ile şemadaki track tablosundaki albüm id sini album tablosunn id siyle , albüm tablosundaki artist id ile artist tablosunun idsini ve albüm isminin Let There Be Rock ismi ile eşit olup olmadığını kontrol ettim order by ile süresini alıp desc ile büyükten küçüğe sıraladım.
